@@ -1,0 +1,9 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+				  xmlns:gs="http://Spring_WS.com/practise">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <gs:getItemRequest>
+         <gs:title>Очки</gs:title>
+      </gs:getItemRequest>
+   </soapenv:Body>
+</soapenv:Envelope>

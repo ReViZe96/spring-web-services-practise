@@ -1,0 +1,32 @@
+<!--Файл отдаётся работающим веб-сервисом, как собственное описание, по адресу ...ws/items.wsdl-->
+<!--На основании этого файла, Maven-плагин jaxb2 сгенерирует классы для веб-сервиса-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://Spring_WS.com/practise"
+           targetNamespace="http://Spring_WS.com/practise" elementFormDefault="qualified">
+
+    <!--описание метода-запроса и его параметров-->
+    <xs:element name="getItemRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="title" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!--Описание формата ответа-->
+    <xs:element name="getItemResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="item" type="tns:item"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!--Описание сложного типа данных (item-сущность)-->
+    <xs:complexType name="item">
+        <xs:sequence>
+            <xs:element name="title" type="xs:string"/>
+            <xs:element name="price" type="xs:int"/>
+            <xs:element name="description" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
